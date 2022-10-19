@@ -1,0 +1,194 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url('./image/spring.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.h1 {
+    height: 100%;
+}
+
+/* 中心點 */
+#clock-face {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgb(251, 206, 200);
+    position: absolute;
+    margin: auto;
+    top: calc(50vh - 232px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+/* 鍾盤 */
+#clock {
+
+    width: 500px;
+    height: 500px;
+    border: 5px solid rgba(250, 221, 212, 0.8);
+    border-radius: 50%;
+    box-shadow:
+        0 0 5px rgb(250, 216, 212),
+        0 0 10px rgba(246, 220, 217, 0.8),
+        0 0 20px rgba(250, 250, 250, 0.5);
+    position: relative;
+    margin: auto;
+    top: calc(50vh - 250px);
+    z-index: 50;
+    overflow: hidden;
+}
+
+.num li {
+    list-style: none;
+    font-size: 3rem;
+    position: absolute;
+    color: #F5A393
+}
+
+/* 12點 */
+.num li:nth-child(1) {
+
+    transform-origin: center 250px;
+    top: 0;
+    left: calc(50% - 20px);
+}
+
+/* 3點 */
+.num li:nth-child(2) {
+
+    transform-origin: center 250px;
+    top: calc(50% - 32px);
+    right: 0;
+}
+
+/* 6點 */
+.num li:nth-child(3) {
+
+    transform-origin: center 250px;
+    bottom: 0;
+    left: calc(50% - 20px);
+}
+
+/* 9點 */
+.num li:nth-child(4) {
+
+    transform: rotate(0deg);
+    top: calc(50% - 26px);
+    left: 0;
+}
+
+.scale li {
+    list-style: none;
+    width: 2px;
+    height: 30px;
+    background: rgb(251, 206, 200);
+    position: absolute;
+    top: 0;
+    left: calc(50% - 5px);
+}
+
+/* 1點 */
+.scale li:nth-child(1) {
+    transform: rotate(28deg);
+    transform-origin: center 260px;
+
+}
+
+/* 2點 */
+.scale li:nth-child(2) {
+    transform: rotate(57deg);
+    transform-origin: center 260px;
+}
+
+/* 4點 */
+.scale li:nth-child(3) {
+    transform: rotate(119deg);
+    transform-origin: center 253px;
+}
+
+/* 5點 */
+.scale li:nth-child(4) {
+    transform: rotate(150deg);
+    transform-origin: center 251.5px;
+}
+
+/* 7點 */
+.scale li:nth-child(5) {
+    transform: rotate(211deg);
+    transform-origin: center 249px;
+}
+
+/* 8點 */
+.scale li:nth-child(6) {
+    transform: rotate(240deg);
+    transform-origin: center 248px;
+}
+
+/* 10點 */
+.scale li:nth-child(7) {
+    transform: rotate(300deg);
+    transform-origin: center 244px;
+}
+
+/* 11點 */
+.scale li:nth-child(8) {
+    transform: rotate(330deg);
+    transform-origin: center 244px;
+}
+
+/* 秒針 */
+#second {
+    width: 45%;
+    height: 1px;
+    background: #F5A393;
+    box-shadow: 0 0 5px rgb(180, 171, 222),
+        0 0 10px rgba(246, 220, 217, 0.8),
+        0 0 20px rgba(250, 250, 250, 0.5);
+    position: absolute;
+    top: calc(50% - 5px);
+    left: calc(50% - 5px);
+    border-radius: 5px;
+    transform-origin: left center;
+}
+
+/* 時針 */
+#hour {
+    width: 20%;
+    height: 10px;
+    background: rgb(251, 206, 200);
+    position: absolute;
+    top: calc(50% - 3px);
+    left: calc(51% - 3px);
+    border-radius: 5px;
+    transform-origin: left center;
+}
+
+/* 分針 */
+#minute {
+    width: 30%;
+    height: 10px;
+    background: #F5A393;
+    position: absolute;
+    top: calc(50% - 3px);
+    left: calc(50% - 3px);
+    border-radius: 5px;
+    transform-origin: left center;
+}
+
+@keyframes change {
+    10% {
+        filter: hue-rotate(360deg);
+    }
+}
