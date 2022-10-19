@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./clock.css">
+    <title>櫻花飛舞</title>
+
+</head>
+
+<body>
+
+    <div id="clock" class="h1">
+        <ul class="num">
+            <li>12</li>
+            <li>3</li>
+            <li>6</li>
+            <li>9</li>
+        </ul>
+        <ul class="scale">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div id="clock-face"></div>
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+        <canvas></canvas>
+    </div>
+    <css-doodle>
+        :doodle {
+        @grid: 15 / 100vmax;
+        }
+        @size:@rand(8,20)px;
+        background:rgb(250, 230, 222);
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        top: @r(-80%, 100%, 1.5);
+        left: @r(1%, 100%, 1.5);
+        animation: move 10s infinite @r(-10, 0)s @p(linear, ease-in, ease-in-out) alternate;
+        transform: rotate(@r(360deg)) translate(@r(-50, 50)vmin, @r(-50, 50)vmin);
+        zoom: @rn(.1, 5, 3);
+        box-shadow: 0 0 5px rgb(250, 216, 212) , 0 0 3px rgb(250, 216, 212);
+        @keyframes move {
+        100% {
+        transform: rotate(0) translate3d(0, 0, 0);
+        }
+        }
+    </css-doodle>
+
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/css-doodle@0.6.1/css-doodle.min.js"></script>
+</body>
+
+</html>
